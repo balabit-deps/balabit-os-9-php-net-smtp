@@ -1,0 +1,214 @@
+php-net-smtp (1.10.0-1) unstable; urgency=medium
+
+  * New upstream release, adding a starttls() method.
+  * Add self to Uploaders.
+  * Bump debhelper from old 12 to 13.
+  * Set debian-branch=debian/latest in d/gbp.conf for DEP-14 compliance.
+  * d/watch:
+    + Update format version to 4.
+    + Use secure URIs and substitution strings.
+  * d/control:
+    + Update standards version to 4.6.0 (no changes necessary).
+    + Add 'Depends: php-pear'.
+    + Exclude 'Build-Depends: php-net-socket' under nocheck profile.
+    + Explicitly add 'Build-Depends: php-pear <!nocheck>'.
+  * Remove upstream tests from d/examples.
+  * d/rules: override_dh_auto_test: Remove check for DEB_BUILD_OPTIONS=nocheck.
+  * Refresh d/copyright.
+  * Add d/upstream/metadata.
+  * Add d/salsa-ci.yml.
+
+ -- Guilhem Moulin <guilhem@debian.org>  Wed, 02 Feb 2022 00:56:50 +0100
+
+php-net-smtp (1.9.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * VCS URLs to Salsa.
+  * DH to version 12.
+  * rules: removed get-orig-source target.
+  * Updated URLs to HTTPS.
+  * Rules-Requires-Root: no
+  * Standards-Version: 4.5.0.
+  * Added myself to Uploaders.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Thu, 13 Feb 2020 13:11:14 +1100
+
+php-net-smtp (1.8.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 1.8.0
+  * Change license to BSD-2 Clause
+  * Update Standards-Version to 4.1.0
+  * Drop Thomas Goirand from uploaders as he requested
+
+ -- Prach Pongpanich <prach@debian.org>  Sun, 27 Aug 2017 20:16:32 +0700
+
+php-net-smtp (1.7.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Use standard gbp layout
+  * Update Standards-Version to 3.9.7
+  * Rebuild with recent pkg-php-tools for the PHP 7.0 transition
+
+ -- David Prévot <taffit@debian.org>  Sun, 20 Mar 2016 16:14:07 -0400
+
+php-net-smtp (1.7.1-1) unstable; urgency=medium
+
+  * New upstream release, update copyright to upstream authors instead of PHP
+    Group
+
+ -- Guillaume Delacour <gui@iroqwa.org>  Mon, 28 Dec 2015 23:41:27 +0100
+
+php-net-smtp (1.6.2-2) unstable; urgency=medium
+
+  * Use "pear run-tests" instead of phpunit for DEP-8 tests
+
+ -- Guillaume Delacour <gui@iroqwa.org>  Sat, 04 Oct 2014 16:03:02 +0200
+
+php-net-smtp (1.6.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Policy version is now 3.9.6, update Vcs-{Browser,Git} fields and add
+    ${phppear:Debian-Depends} and ${phppear:Debian-Breaks}
+  * Now build-depends on debhelper 9.
+  * Run upstream test suite during build with phpunit and add DEP-8 support
+  * Remove specific {Pre-}Depends as pkg-php-tools set them correctly
+  * Add Build-Depends on php-net-socket as upstream test suite load it
+  * Remove debian/docs to not install guide.txt twice (package.xml)
+  * Update copyright to current 1.0 format
+  * Update Php license to short PHP-3.01
+
+ -- Guillaume Delacour <gui@iroqwa.org>  Mon, 22 Sep 2014 21:28:43 +0200
+
+php-net-smtp (1.6.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #655324).
+  * Switching to pkg-php-tools and dh 8 short style (so, rewrote the
+  debian/rules file).
+  * Reformated the debian/copyright file to match current DEP5 specs.
+  * Added a default debian/gbp.conf.
+  * Removed useless debian/NEWS file.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 13 Jan 2012 14:12:24 +0800
+
+php-net-smtp (1.6.0-1) unstable; urgency=low
+
+  * New upstream release with the following improvements:
+  - Adding a new command() method for sending arbitrary SMTP commands.
+  - More kinds of socket write() failures are now detected.
+  - Improved PEAR_Error internal handling. (Bug 18469)
+  - External authentication methods are now supported via setAuthMethod().
+  - Resource-based data streams are no longer terminated prematurely.
+  (Bug 18563)
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 12 Jun 2011 10:29:37 +0800
+
+php-net-smtp (1.5.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove useless configure debian/rules target.
+  * Policy version is now 3.9.2.
+  * Updated Vcs-Git / Vcs-Browser as we are switching the package from SVN to
+  Git maintenance.
+  * Added more text on the long description.
+  * Now build-depends on debhelper 7.
+  * Now using DEP5 for debian/copyright.
+  * Now using pkg-php-pear@lists.alioth.debian.org as maintainer, and not
+  pkg-php-maint@lists.alioth.debian.org anymore.
+  * Removes useless dh-make-php build-depends.
+  * Using dh_prep instead of dh_clean -k.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 30 May 2011 13:09:56 +0800
+
+php-net-smtp (1.4.2-3) unstable; urgency=low
+
+  * debian/control: Remove Breaks: and move php-pear (>= 5.3.1-4) from Depends
+    as Pre-Depends, as discussed on debian-release mailing-list.
+
+ -- Guillaume Delacour <gui@iroqwa.org>  Thu, 25 Nov 2010 19:10:20 +0100
+
+php-net-smtp (1.4.2-2) unstable; urgency=low
+
+  * Added a Conflicts: php-pear (<< 5.3), and now depends on php-pear (>= 5.3)
+    because otherwise upgrading path from Lenny is borken (Closes: #602865).
+  * Added myself as an uploader.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 14 Nov 2010 16:16:34 +0800
+
+php-net-smtp (1.4.2-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/watch: update to pear download page
+  * Bump to Standards-Version 3.8.4
+    + Change section from web to php
+    + Depends on ${misc:Depends}
+    + Add Build-Depends on dh-make-php (>= 0.2.3)
+  * debian/rules: Delete empty /usr/share/php/.registry/.channel.doc.php.net/
+  * Switch to dpkg-source 3.0 (quilt) format
+  * debian/NEWS: Add empty line at EOF and change version to first release 1.2.6
+
+ -- Guillaume Delacour <gui@iroqwa.org>  Mon, 29 Mar 2010 18:57:31 +0000
+
+php-net-smtp (1.3.2-1) unstable; urgency=low
+
+  * New upstream release, changelog:
+    - TLS connection only gets started if no AUTH methods are sent. (Bug #14944)
+  * Checked for policy 3.8.1, no changes.
+
+ -- Guillaume Delacour <gui@iroqwa.org>  Tue, 16 Jun 2009 09:49:59 +0000
+
+php-net-smtp (1.3.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Checked for policy 3.8.0, no changes.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Sat, 14 Jun 2008 20:15:48 +0200
+
+php-net-smtp (1.3.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Sat, 03 May 2008 17:27:03 +0200
+
+php-net-smtp (1.2.11-2) unstable; urgency=low
+
+  * Depend on php-net-socket >= 1.0.7, thanks
+    Grzegorz Sobański (Closes: #475005).
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Tue, 22 Apr 2008 01:25:14 +0200
+
+php-net-smtp (1.2.11-1) unstable; urgency=low
+
+  [ Martin Lohmeier ]
+  * new upstream release
+  * new build system using pear command
+  * moved test files into examples directory
+  * new 'get-orig-source' target
+  * updated to Standard-Version 3.7.2
+  * build depend on debhelper >= 5
+  * add debian/watch
+  * update license to version 3.01, (Closes: #332615)
+  * add Homepage to debian/control
+
+  [ Amaya Rodrigo Sastre ]
+  * Don't Recommend non-existent php-auth-sasl (Closes: #369273).
+
+  [ Thijs Kinkhorst ]
+  * Newer upstream release && upload.
+
+ -- Thijs Kinkhorst <thijs@debian.org>  Mon, 31 Mar 2008 20:52:12 +0200
+
+php-net-smtp (1.2.6-2) unstable; urgency=low
+
+  * Need to replace php4-pear (<< 4:4.4.0-0), yes the epoch matters.
+  * Update debian/copyright to make sure the license is correct, the
+    Debian maintainers are mentioned, the upstream copyright holder
+    is mentioned and the upstream location is quoted.
+
+ -- Adam Conrad <adconrad@0c3.net>  Fri, 29 Jul 2005 08:37:48 +1000
+
+php-net-smtp (1.2.6-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Ondřej Surý <ondrej@sury.org>  Thu, 21 Jul 2005 09:45:07 +0200

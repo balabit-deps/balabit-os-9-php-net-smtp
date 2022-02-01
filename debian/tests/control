@@ -1,0 +1,2 @@
+Test-Command: pear run-tests Net_SMTP-*/tests
+Depends: @, php-pear

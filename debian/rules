@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=phppear --with phppear
+
+override_dh_auto_test:
+	cd Net_SMTP-* && pear run-tests tests
